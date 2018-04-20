@@ -1,0 +1,31 @@
+{% block nav %}
+    
+{% endblock %}
+
+{% block content %}
+
+{% for each in photos %}
+<img src="{{ each[0] }}" alt="photo">
+<br>
+{{ each[1] }}
+<br>
+<br>
+<br>
+<br>
+{% endfor %} 
+
+
+
+<!-- {% for each in cameras %}
+<p>{{ each['id'] }}</p>
+{% endfor %} -->
+
+{% for each in models %}
+
+<p>{{ each['name']['_content'] }}</p>
+
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+</head>
+<body>
+
+	{% extends 'navigation.html' %}
+
+	
+	{% block content %}
+
+
+	<h1>Welcome {{ current_user.first_name }}</h1>
+	<br>
+	<br>
+	<br>
+	<h2>Find Pictures by Keyword:</h2>
+	<br>
+	<form action="/search_results" method = "GET">
+		{{ form.hidden_tag() }}
+		{{ form.search() }}	
+		{{ form.submit() }}	
+	</form>
+
+	<br>
+	<footer>
+		<a href="/cameras">See Some Cameras</a>
+	</footer>
+
+	{% endblock %}
+
+	
+</body>
+</html>

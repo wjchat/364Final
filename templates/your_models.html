@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Your</title>
+</head>
+<body>
+
+	{% extends 'navigation.html' %}
+	
+	{% block content %}
+
+	{% for message in get_flashed_messages() %}
+		{{ message }}
+	{% endfor %}
+
+	<div>
+		<h1>{{ current_user.first_name }}'s Rated Cameras</h1>
+		<ul>
+		{% for each in cameras %}
+		<li>
+			{{ each.name[1:] }}
+		
+		</li>
+
+		{% endfor %}
+
+		</ul>
+		
+	</div>
+
+
+	{% endblock %}
+</body>
+</html>

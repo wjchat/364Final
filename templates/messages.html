@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Messages</title>
+</head>
+<body>
+	{% extends 'navigation.html' %}
+	
+	{% block content %}
+	{% for message in get_flashed_messages() %}
+		{{ message }}
+	{% endfor %}
+
+	<div>
+		<h1>Messages</h1>
+		<div>
+			<ul><h2>Sent</h2><br>
+				{% if sent %}
+					{% for each in sent %}
+					<img src="{{each.image}}" alt="image">
+					<br>
+					<p>Message: {{ each.text }}</p>
+					<p>Sent to: {{ each.reciever }}</p>
+					{% endfor %}
+				{% else %}
+
+					<h5>You have not sent any messages</h2>
+
+				{% endif %}				
+
+			</ul>
+			<ul><h2>Recieved</h2><br>
+				{% if recieved %}
+					{% for each in recieved %}
+					<img src="{{ each.image }}" alt="image">
+					<br>
+					<p>Message: {{ each.text }}</p>
+					<p>Recieved from: {{ each.sender }}</p>
+					{% endfor %}
+				{% else %}
+				<h5>You have not recieved any messages</h2>
+				{% endif %}				
+
+			</ul>
+		</div>
+
+	</div>
+
+
+
+	{% endblock %}
+	
+</body>
+</html>

@@ -1,0 +1,2 @@
+The app I'm going to build for my final project will first have users login/create an account- then it will allow them to search for photos on flickr and then save photos they like to view later. Also, it will allow for users to send and recieve photos they like to and from other users. i especially wanted to try the messaging component just to see if I could do it using only databases. It will also allow users to see and save camera 
+models publically (to a group list).

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	{% extends 'navigation.html' %}
+	
+	{% block content %}
+	{% for message in get_flashed_messages() %}
+		{{ message }}
+	{% endfor %}
+
+	<div>
+		<h1>Send this photo</h1>
+		<img src="{{ photo.pic_url }}" alt="">
+		<br>
+		<p>{{ photo.title }}</p>
+		<form method = 'POST'>
+			{{ form.hidden_tag() }}
+			{{ form.recipient.label }}{{ form.recipient() }}
+			{{ form.message.label }}{{ form.message() }}
+			{{ form.submit() }}
+
+		</form>
+
+	</div>
+
+
+
+	{% endblock %}
+	
+</body>
+</html>

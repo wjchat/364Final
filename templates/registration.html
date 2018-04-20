@@ -1,0 +1,27 @@
+{% extends 'navigation.html' %}
+
+
+{% block content %}
+<h1>Sign up for a new user account</h1>
+
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+<br><br>
+
+
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.email.label }} {{ form.email() }}
+	{{ form.first_name.label }} {{ form.first_name() }}
+	{{ form.last_name.label }} {{ form.last_name() }}
+	{{ form.username.label }} {{ form.username() }}
+    {{ form.password.label }} {{ form.password() }}
+    {{ form.password2.label }} {{ form.password2() }}
+	{{ form.submit() }}
+</form>
+
+{% endblock %}

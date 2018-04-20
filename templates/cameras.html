@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cameras</title>
+</head>
+<body>
+	{% extends 'navigation.html' %}
+	
+	{% block content %}
+
+	{% for each in cameras %}
+
+	<p>{{ each['name'] }} - <a href="/models{{ each['name'] }}">See models from this brand</a></p>
+	<br>
+
+	{% endfor %}
+
+	{% endblock %}
+
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Models</title>
+</head>
+<body>
+
+	{% extends 'navigation.html' %}
+	
+	{% block content %}
+	<h1>{{ brand }} Cameras:</h1>
+
+	<div> 
+		{% for each in models %}
+
+		{{ each['name']['_content'] }}
+	
+		
+		<br>
+		<form action="your_models<{{each['name']['_content']}}" method = 'POST'>
+			{{ form.hidden_tag() }}
+			{{ form.rate.label }}{{ form.rate() }}
+			{{ form.submit() }}
+
+		</form>
+		<br>
+		<br>
+
+		{% endfor %}
+
+	</div>
+
+
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search Results</title>
+</head>
+<body>
+
+	{% extends 'navigation.html' %}
+
+
+	{% block content %}
+
+	<div>
+	{% for message in get_flashed_messages() %}
+		{{ message }}
+	{% endfor %}
+	</div>
+
+	<h1>Search Results for '{{ term }}'.</h1>
+	<br>
+	<div>
+		{% for each in results %}
+
+		<img src="{{each[0]}}" alt="Picture Failed to Display :/">
+		<br>
+		<p>{{ each[1] }}</p>
+
+		<form action="" method = 'POST'>
+
+			<button type = 'submit' name = 'photo' value = '{{each}}' >Save this photo</button>
+
+
+		</form>
+
+		
+		<br>
+		<br>
+
+		{% endfor %}
+
+	</div>
+	{% endblock %}
+	
+</body>
+</html>
